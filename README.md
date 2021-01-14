@@ -8,12 +8,13 @@ Napisz klasę `Artysta`, która posiada:
 - publiczny konstruktor domyślny, tworzący muzyka `"Anonim"` o zerowej liczbie słuchaczy
 - publiczny konstruktor parametryczny `Artysta(const std::string&, unsigned)`, który wykorzystuje listę inicjalizacyjną do nadania wartości polom klasy
 - publiczną metodę `void graj(std::ostream&) const`, która drukuje do podanego strumienia tekst "[pseudonim]: [liczba fanów]"
-- publiczny getter `getSluchacze`, zwracający liczbę słuchaczy
+- publiczny getter `const std::string& getPseudonim() const`, zwracający liczbę pseudonim
+- publiczny getter `unsigned getSluchacze() const`, zwracający liczbę słuchaczy
 
 **Uwaga**: zwróć uwagę na poprawne formatowanie w metodzie `graj`. Między wartościami odpowiednich pól powinny się znaleźć jedynie znaki dwukropka i spacji.
 
 ## Zadanie 2
-Zmodyfikuj klasę `Artysta` tak, aby metoda `graj` była wirtualna. Następnie napisz klasy `PopGwiazda` oraz `RapGwiazda`, publicznie dziedziczące po klasie `Artysta`. Niech nadpisują one metodę `graj` tak, aby:
+Zmodyfikuj klasę `Artysta` tak, aby metoda `graj` była wirtualna. Następnie napisz klasy `PopGwiazda` oraz `RapGwiazda`, publicznie dziedziczące po klasie `Artysta`. Dodaj do nich konstruktory, przyjmujące stałą referencję do `std::string` oraz `unsigned`, które tworzą odpowiednio obiekt bazowy. Ponad to, niech nadpisują one metodę `graj` tak, aby:
 - `PopGwiazda` drukowała do podanego strumienia tekst `"PopGwiazda: [pseudonim]"`
 - `RapGwiazda` drukowała do podanego strumienia tekst `"RapGwiazda: [pseudonim]"`
 
